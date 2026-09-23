@@ -4,9 +4,9 @@ CREATE TABLE specializations (
 );
 
 CREATE TABLE doctors (
-    doctor_id SERIAL PRIMARY KEY
-    first_name VARCHAR(100) NOT NULL
-    last_name VARCHAR(100) NOT NULL
+    doctor_id SERIAL PRIMARY KEY,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
     specialization_id NUM FOREIGN KEY
 );
 
