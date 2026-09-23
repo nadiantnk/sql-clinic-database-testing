@@ -8,6 +8,8 @@ CREATE TABLE doctors (
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     specialization_id INT
+    FOREIGN KEY (specialization_id)
+        REFERENCES specializations(specialization_id)
 );
 
 CREATE TABLE patients (
