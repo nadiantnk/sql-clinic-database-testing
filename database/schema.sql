@@ -7,7 +7,7 @@ CREATE TABLE doctors (
     doctor_id SERIAL PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
-    specialization_id INT FOREIGN KEY
+    specialization_id INT
 );
 
 CREATE TABLE patients (
