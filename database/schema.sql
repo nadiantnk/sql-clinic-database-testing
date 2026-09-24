@@ -7,13 +7,20 @@ CREATE TABLE doctors (
     doctor_id SERIAL PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
-    specialization_id INT
+    specialization_id INT,
     FOREIGN KEY (specialization_id)
         REFERENCES specializations(specialization_id)
 );
 
 CREATE TABLE patients (
-    ...
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    patronymic VARCHAR(100),
+    date_of_birth DATE,
+    phone VARCHAR(20),
+    gender CHAR(1) CHECK (gender IN ('М', 'Ж')),
+    policy_number VARCHAR(50) UNIQUE
+    
 );
 
 CREATE TABLE appointments (
