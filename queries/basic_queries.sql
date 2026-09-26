@@ -10,3 +10,7 @@ SELECT last_name
 FROM patients
 WHERE last_name = 'Соколова';
 
+--Получить всех пациентов женского пола
+SELECT first_name, last_name
+FROM patients
+WHERE gender = 'Ж';
