@@ -18,4 +18,4 @@ WHERE gender = 'Ж';
 --Получить пациентов которые родились после 1990 года
 SELECT first_name, last_name, date_of_birth
 FROM patients
-WHERE date_of_birth > 1990;
+WHERE date_of_birth > '1990-01-01';
