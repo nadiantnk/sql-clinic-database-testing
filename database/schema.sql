@@ -13,6 +13,7 @@ CREATE TABLE doctors (
 );
 
 CREATE TABLE patients (
+    patient_id INT PRIMARY KEY,
     first_name VARCHAR(100),
     last_name VARCHAR(100),
     patronymic VARCHAR(100),
@@ -20,9 +21,15 @@ CREATE TABLE patients (
     phone VARCHAR(20),
     gender CHAR(1) CHECK (gender IN ('М', 'Ж')),
     policy_number VARCHAR(50) UNIQUE
-    
 );
 
 CREATE TABLE appointments (
-    ...
+    appointment_id INT,
+    patient_id INT,
+    doctor_id INT,
+    appointment_date DATE,
+    appointment_time TIME,
+    status VARCHAR(20),
+    FOREIGN KEY (patient_id)
+       REFERENCES patients(patient_id)
 );
