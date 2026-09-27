@@ -19,3 +19,8 @@ WHERE gender = 'Ж';
 SELECT first_name, last_name, date_of_birth
 FROM patients
 WHERE date_of_birth > '1990-01-01';
+
+SELECT first_name, last_name,  date_of_birth
+FROM patients
+WHERE gender = 'Ж' AND date_of_birth > '1990-01-01';
+
