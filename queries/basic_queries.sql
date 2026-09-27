@@ -20,7 +20,12 @@ SELECT first_name, last_name, date_of_birth
 FROM patients
 WHERE date_of_birth > '1990-01-01';
 
+--Получить пациентов женского пола и рожденных после 1990г
 SELECT first_name, last_name,  date_of_birth
 FROM patients
 WHERE gender = 'Ж' AND date_of_birth > '1990-01-01';
 
+--Получить пациентов которые либо женщины, либо родились после 2000г
+SELECT first_name, last_name,  date_of_birth, gender
+FROM patients
+WHERE gender = 'Ж' OR date_of_birth > '2000-01-01' 
