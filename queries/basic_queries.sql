@@ -29,3 +29,8 @@ WHERE gender = 'Ж' AND date_of_birth > '1990-01-01';
 SELECT first_name, last_name,  date_of_birth, gender
 FROM patients
 WHERE gender = 'Ж' OR date_of_birth > '2000-01-01' 
+
+--Получить женщин, родившиеся после 1990 года, ИЛИ мужчин, родившихся после 2000 года.
+SELECT first_name, last_name, gender, date_of_birth
+FROM patients
+WHERE (gender = 'Ж' AND date_of_birth > '1990-01-01') OR  (gender = 'М' AND date_of_birth > '2000-01-01');
