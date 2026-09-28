@@ -6,7 +6,7 @@ SELECT first_name, last_name
 FROM patients;
 
 --Найти всех пациентов с фамилией «Соколова»
-SELECT last_name
+SELECT first_name, last_name
 FROM patients
 WHERE last_name = 'Соколова';
 
@@ -15,27 +15,28 @@ SELECT first_name, last_name
 FROM patients
 WHERE gender = 'Ж';
 
---Получить пациентов которые родились после 1990 года
+--Получить пациентов, которые родились после 1990 года
 SELECT first_name, last_name, date_of_birth
 FROM patients
 WHERE date_of_birth > '1990-01-01';
 
---Получить пациентов женского пола и рожденных после 1990г
-SELECT first_name, last_name,  date_of_birth
+--Получить пациентов женского пола, рожденных после 1990 г.
+SELECT first_name, last_name, date_of_birth
 FROM patients
 WHERE gender = 'Ж' AND date_of_birth > '1990-01-01';
 
---Получить пациентов которые либо женщины, либо родились после 2000г
-SELECT first_name, last_name,  date_of_birth, gender
+--Получить пациентов, которые либо женщины, либо родились после 2000 г.
+SELECT first_name, last_name, date_of_birth, gender
 FROM patients
-WHERE gender = 'Ж' OR date_of_birth > '2000-01-01' 
+WHERE gender = 'Ж' OR date_of_birth > '2000-01-01';
 
---Получить женщин, родившиеся после 1990 года, ИЛИ мужчин, родившихся после 2000 года.
+--Получить женщин, родившихся после 1990 года, ИЛИ мужчин, родившихся после 2000 года
 SELECT first_name, last_name, gender, date_of_birth
 FROM patients
-WHERE (gender = 'Ж' AND date_of_birth > '1990-01-01') OR  (gender = 'М' AND date_of_birth > '2000-01-01');
+WHERE (gender = 'Ж' AND date_of_birth > '1990-01-01')
+   OR (gender = 'М' AND date_of_birth > '2000-01-01');
 
 --Получить пациентов, у которых фамилия Соколова, Иванова или Петрова
-SELECT first_name, last_name,  date_of_birth
+SELECT first_name, last_name, date_of_birth
 FROM patients
-WHERE last_name IN ('Соколова', 'Иванова', 'Петрова')
+WHERE last_name IN ('Соколова', 'Иванова', 'Петрова');
