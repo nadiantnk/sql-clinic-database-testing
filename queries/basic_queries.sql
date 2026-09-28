@@ -40,3 +40,18 @@ WHERE (gender = 'Ж' AND date_of_birth > '1990-01-01')
 SELECT first_name, last_name, date_of_birth
 FROM patients
 WHERE last_name IN ('Соколова', 'Иванова', 'Петрова');
+
+--Получить пациентов, у которых фамилия начинается на «С»
+SELECT first_name, last_name
+FROM patients
+WHERE last_name LIKE 'С%';
+
+--Получить пациентов, у которых фамилия заканчивается на «ова»
+SELECT first_name, last_name
+FROM patients
+WHERE last_name LIKE '%ова';
+
+--Получить пациентов, у которых имя состоит из 4 букв
+SELECT first_name, last_name
+FROM patients
+WHERE first_name LIKE '____';
