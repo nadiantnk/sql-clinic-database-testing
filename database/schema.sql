@@ -41,3 +41,18 @@ CREATE TABLE appointments (
         REFERENCES doctors(doctor_id)
         ON DELETE RESTRICT
 );
+
+CREATE TABLE wards (
+    ward_id SERIAL PRIMARY KEY,
+    ward_number VARCHAR(10) NOT NULL UNIQUE,
+    specialization_id INT NOT NULL,
+    category VARCHAR(20) NOT NULL
+        CHECK (category IN ('Одноместная', 'Двухместная', 'Общая')),
+    capacity INT NOT NULL
+        CHECK (capacity > 0),
+    price_per_day NUMERIC(10, 2) NOT NULL
+        CHECK (price_per_day > 0),
+    FOREIGN KEY (specialization_id)
+        REFERENCES specializations(specialization_id)
+        ON DELETE RESTRICT
+);
