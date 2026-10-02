@@ -209,3 +209,9 @@ END;
 SELECT patients.last_name, hospitalizations.diagnosis
 FROM hospitalizations
 JOIN patients ON patients.patient_id = hospitalizations.patient_id;
+
+--Получить фамилию и дату поступления пациентов, у которых диагноз «Пневмония».
+SELECT patients.last_name, hospitalizations.admission_date
+FROM patients
+JOIN hospitalizations ON patients.patient_id = hospitalizations.patient_id
+WHERE hospitalizations.diagnosis = 'Пневмония'
