@@ -56,14 +56,6 @@ SELECT first_name, last_name
 FROM patients
 WHERE first_name LIKE '____';
 
--- ============================================
--- Запросы к базе clinic (PostgreSQL, DBeaver)
--- Таблицы: patients, hospitalizations, wards
--- ============================================
-
-
--- ---------- 1. Подсчёт ----------
-
 -- Получить количество пациентов, родившихся после 1990-01-01
 SELECT COUNT(*)
 FROM patients
@@ -81,9 +73,6 @@ FROM patients;
 -- Получить уникальные значения пола
 SELECT DISTINCT gender
 FROM patients;
-
-
--- ---------- 2. Сортировка и LIMIT ----------
 
 -- Получить имя, фамилию и дату рождения, отсортировав по фамилии, затем по имени (А-Я)
 SELECT first_name, last_name, date_of_birth
@@ -123,9 +112,6 @@ SELECT patient_id, first_name, last_name
 FROM patients
 ORDER BY patient_id;
 
-
--- ---------- 3. Пустые значения (NULL) ----------
-
 -- Получить пациентов, у которых указано отчество
 SELECT first_name, last_name, patronymic
 FROM patients
@@ -135,9 +121,6 @@ WHERE patronymic IS NOT NULL;
 SELECT first_name, last_name, patronymic
 FROM patients
 WHERE patronymic IS NULL;
-
-
--- ---------- 4. Поиск по шаблону (LIKE) ----------
 
 -- Получить пациентов, у которых фамилия заканчивается на «ова»
 SELECT first_name, last_name
@@ -153,9 +136,6 @@ WHERE last_name LIKE 'С%';
 SELECT first_name, last_name
 FROM patients
 WHERE first_name LIKE '____';
-
-
--- ---------- 5. Фильтрация (WHERE, AND, OR, IN) ----------
 
 -- Получить имя и фамилию всех пациентов
 SELECT first_name, last_name
