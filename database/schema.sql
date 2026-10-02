@@ -56,3 +56,15 @@ CREATE TABLE wards (
         REFERENCES specializations(specialization_id)
         ON DELETE RESTRICT
 );
+
+CREATE TABLE hospitalizations (
+    hospitalization_id SERIAL PRIMARY KEY,
+    patient_id INT NOT NULL,
+    admission_date DATE NOT NULL,
+    discharge_date DATE,
+    days_in_hospital INT,
+    diagnosis VARCHAR(200),
+    FOREIGN KEY (patient_id)
+        REFERENCES patients(patient_id)
+        ON DELETE RESTRICT
+);
